@@ -4,7 +4,7 @@ var file = process.argv.slice(2)[0];
 console.log(parse(file));
 
 function parse(file){
-	var lines = fs.readFileSync(file).toString().split('\n');
+	var lines = fs.readFileSync(file).toString().trim().split('\n');
 	var keys = lines.shift().split('|');
 
 	var json = lines.map(function(line) {
@@ -18,7 +18,6 @@ function parse(file){
 	return json;
 }
 
-//console.log(obj);
 
 
 	
